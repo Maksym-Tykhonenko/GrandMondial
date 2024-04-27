@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const HomeScreen = ({navigation}) => {
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         backgroundColor: '#fff',
@@ -37,7 +37,7 @@ const HomeScreen = ({navigation}) => {
           <Text>Go to Details Screen</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
