@@ -121,199 +121,227 @@ const ProfileScreen = ({navigation}) => {
             marginTop: 40,
           }}>
           <View>
-            {/**Avatart Block */}
-            <View style={{alignItems: 'center'}}>
-              {/**wallpaper */}
-              <TouchableOpacity
-                onPress={() => {
-                  WallpaperPicer();
-                }}
-                style={{
-                  width: width,
-                  height: 200,
-                  borderWidth: 3,
-                  borderColor: '#f44fac',
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  alignItems: 'center',
-                  shadowColor: '#f44fac',
-                  shadowOffset: {width: 0, height: 10},
-                  shadowOpacity: 0.9,
-                  shadowRadius: 10,
-                }}>
-                {wallpaper ? (
-                  <Image
-                    source={{uri: wallpaper}}
-                    style={{
-                      width: width,
-                      height: 200,
-                      borderWidth: 3,
-                      borderColor: '#f44fac',
-                    }}
-                  />
-                ) : (
-                  <Text
-                    style={{
-                      color: '#f44fac',
-                      fontSize: 40,
-                      fontWeight: 'bold',
-                      textAlign: 'center',
-                    }}>
-                    Press & add wallpaper
-                  </Text>
-                )}
-              </TouchableOpacity>
-
-              {/**Avatar */}
-              <TouchableOpacity
-                onPress={() => {
-                  AvatarPicer();
-                }}
-                style={{
-                  width: 250,
-                  height: 250,
-                  marginTop: -100,
-                  borderWidth: 3,
-                  borderRadius: 150,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderColor: '#f44fac',
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  shadowColor: '#f44fac',
-                  shadowOffset: {width: 0, height: 10},
-                  shadowOpacity: 0.9,
-                  shadowRadius: 10,
-                }}>
-                {avatar ? (
-                  <Image
-                    source={{uri: avatar}}
-                    style={{
-                      width: 250,
-                      height: 250,
-                      borderRadius: 150,
-                      borderWidth: 3,
-                      borderColor: '#f44fac',
-                    }}
-                  />
-                ) : (
-                  <Text
-                    style={{
-                      color: '#f44fac',
-                      fontSize: 30,
-                      fontWeight: 'bold',
-                      textAlign: 'center',
-                      shadowColor: '#f44fac',
-                      shadowOffset: {width: 0, height: 10},
-                      shadowOpacity: 0.9,
-                      shadowRadius: 10,
-                    }}>
-                    Press & add avatar
-                  </Text>
-                )}
-              </TouchableOpacity>
-            </View>
-
-            <View style={{alignItems: 'center'}}>
-              {!name ? (
-                <View>
-                  <TextInput
-                    placeholderTextColor="rgba(244, 79, 172, 0.7)"
-                    placeholder="Enter name..."
-                    value={prevName}
-                    onChangeText={setPrevName}
-                    style={{
-                      shadowOffset: {width: 3, height: 4},
-                      shadowOpacity: 0.8,
-                      elevation: 9,
-                      marginTop: 5,
-                      marginBottom: 15,
-                      paddingLeft: 10,
-                      fontSize: 20,
-                      borderWidth: 3,
-                      borderColor: 'transparent',
-                      borderBottomColor: '#f44fac',
-                      color: '#f44fac',
-                      backgroundColor: 'transparent',
-                      width: 280,
-                      height: 60,
-                      shadowColor: '#000',
-                      shadowOffset: {width: 0, height: 10},
-                      shadowOpacity: 0.9,
-                      shadowRadius: 10,
-                    }}
-                  />
-                  <TouchableOpacity
-                    onPress={() => {
-                      setName(prevName);
-                    }}
-                    style={{
-                      marginBottom: 20,
-                      width: 280,
-                      height: 50,
-                      backgroundColor: '#f44fac',
-                      borderRadius: 15,
-                      borderWidth: 3,
-                      borderColor: '#f44fac',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      shadowColor: '#000',
-                      shadowOffset: {width: 30, height: 50},
-                      shadowOpacity: 0.9,
-                      shadowRadius: 10,
-                    }}>
+            <ScrollView>
+              {/**Avatart Block */}
+              <View style={{alignItems: 'center'}}>
+                {/**wallpaper */}
+                <TouchableOpacity
+                  onPress={() => {
+                    WallpaperPicer();
+                  }}
+                  style={{
+                    width: width,
+                    height: 200,
+                    borderWidth: 3,
+                    borderColor: '#f44fac',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    alignItems: 'center',
+                    shadowColor: '#f44fac',
+                    shadowOffset: {width: 0, height: 10},
+                    shadowOpacity: 0.9,
+                    shadowRadius: 10,
+                  }}>
+                  {wallpaper ? (
+                    <Image
+                      source={{uri: wallpaper}}
+                      style={{
+                        width: width,
+                        height: 200,
+                        borderWidth: 3,
+                        borderColor: '#f44fac',
+                      }}
+                    />
+                  ) : (
                     <Text
                       style={{
-                        color: '#000',
-                        fontSize: 20,
+                        color: '#f44fac',
+                        fontSize: 40,
                         fontWeight: 'bold',
                         textAlign: 'center',
-                        shadowColor: '#000',
+                      }}>
+                      Press & add wallpaper
+                    </Text>
+                  )}
+                </TouchableOpacity>
+
+                {/**Avatar */}
+                <TouchableOpacity
+                  onPress={() => {
+                    AvatarPicer();
+                  }}
+                  style={{
+                    width: 250,
+                    height: 250,
+                    marginTop: -100,
+                    borderWidth: 3,
+                    borderRadius: 150,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderColor: '#f44fac',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    shadowColor: '#f44fac',
+                    shadowOffset: {width: 0, height: 10},
+                    shadowOpacity: 0.9,
+                    shadowRadius: 10,
+                  }}>
+                  {avatar ? (
+                    <Image
+                      source={{uri: avatar}}
+                      style={{
+                        width: 250,
+                        height: 250,
+                        borderRadius: 150,
+                        borderWidth: 3,
+                        borderColor: '#f44fac',
+                      }}
+                    />
+                  ) : (
+                    <Text
+                      style={{
+                        color: '#f44fac',
+                        fontSize: 30,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        shadowColor: '#f44fac',
                         shadowOffset: {width: 0, height: 10},
                         shadowOpacity: 0.9,
                         shadowRadius: 10,
                       }}>
-                      Save name
+                      Press & add avatar
                     </Text>
-                  </TouchableOpacity>
-                </View>
-              ) : (
-                <View>
-                  <Text
-                    style={{
-                      color: '#f44fac',
-                      fontSize: 40,
-                      fontWeight: 'bold',
-                      textAlign: 'center',
-                      shadowColor: '#f44fac',
-                      shadowOffset: {width: 0, height: 10},
-                      shadowOpacity: 0.9,
-                      shadowRadius: 10,
-                    }}>
-                    {name}
-                  </Text>
-                </View>
-              )}
-            </View>
+                  )}
+                </TouchableOpacity>
+              </View>
 
-            <View>
-              <ScrollView>
+              <View style={{alignItems: 'center'}}>
+                {!name ? (
+                  <View>
+                    <TextInput
+                      placeholderTextColor="rgba(244, 79, 172, 0.7)"
+                      placeholder="Enter name..."
+                      value={prevName}
+                      onChangeText={setPrevName}
+                      style={{
+                        shadowOffset: {width: 3, height: 4},
+                        shadowOpacity: 0.8,
+                        elevation: 9,
+                        marginTop: 5,
+                        marginBottom: 15,
+                        paddingLeft: 10,
+                        fontSize: 20,
+                        borderWidth: 3,
+                        borderColor: 'transparent',
+                        borderBottomColor: '#f44fac',
+                        color: '#f44fac',
+                        backgroundColor: 'transparent',
+                        width: 280,
+                        height: 60,
+                        shadowColor: '#000',
+                        shadowOffset: {width: 0, height: 10},
+                        shadowOpacity: 0.9,
+                        shadowRadius: 10,
+                      }}
+                    />
+                    <TouchableOpacity
+                      onPress={() => {
+                        setName(prevName);
+                      }}
+                      style={{
+                        marginBottom: 20,
+                        width: 280,
+                        height: 50,
+                        backgroundColor: '#f44fac',
+                        borderRadius: 15,
+                        borderWidth: 3,
+                        borderColor: '#f44fac',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        shadowColor: '#000',
+                        shadowOffset: {width: 30, height: 50},
+                        shadowOpacity: 0.9,
+                        shadowRadius: 10,
+                      }}>
+                      <Text
+                        style={{
+                          color: '#000',
+                          fontSize: 20,
+                          fontWeight: 'bold',
+                          textAlign: 'center',
+                          shadowColor: '#000',
+                          shadowOffset: {width: 0, height: 10},
+                          shadowOpacity: 0.9,
+                          shadowRadius: 10,
+                        }}>
+                        Save name
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                ) : (
+                  <View>
+                    <Text
+                      style={{
+                        color: '#f44fac',
+                        fontSize: 40,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        shadowColor: '#f44fac',
+                        shadowOffset: {width: 0, height: 10},
+                        shadowOpacity: 0.9,
+                        shadowRadius: 10,
+                      }}>
+                      {name}
+                    </Text>
+                  </View>
+                )}
+              </View>
+
+              <View style={{alignItems: 'center'}}>
                 {allForcastData &&
                   allForcastData
                     .filter(
                       (forcast, index, self) =>
-                        index === self.findIndex(f => f.name === forcast.name),
+                        index ===
+                        self.findIndex(
+                          f => f.name === forcast.name && f.myForcast, // Додали умову для наявності прогнозу
+                        ),
                     )
                     .map(forcast => {
                       return (
-                        <View key={uid()}>
-                          <Text style={{color: '#fff'}}>
-                            {forcast.myForcast}
-                          </Text>
-                          <Text style={{color: '#fff'}}>{forcast.name}</Text>
+                        <View
+                          style={{
+                            borderWidth: 2,
+                            borderColor: '#f44fac',
+                            width: width * 0.8,
+                            margin: 10,
+                            //marginBottom: 15,
+                          }}
+                          key={uid()}>
+                          <View
+                            style={{
+                              borderWidth: 2,
+                              borderColor: '#f44fac',
+                              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                              width: width * 0.8,
+                              padding: 5,
+                              margin: 10,
+                              shadowColor: '#f44fac',
+                              shadowOffset: {width: 0, height: 10},
+                              shadowOpacity: 0.9,
+                              shadowRadius: 10,
+                            }}>
+                            <Text style={{color: '#f44fac', fontSize: 18}}>
+                              {forcast.name}
+                            </Text>
+                            <Text style={{color: '#f44fac', fontSize: 18}}>
+                              My forcast: {forcast.myForcast}
+                            </Text>
+                          </View>
                         </View>
                       );
                     })}
-              </ScrollView>
-            </View>
+                <View style={{height: 100}}></View>
+              </View>
+            </ScrollView>
           </View>
 
           {/**BTN Back */}
